@@ -4,9 +4,9 @@
 
 Simple forward kinematics example. When you press a mouse button and move a joint in the arm, all following segments move adequately.
 
-<video width="320" height="240" controls>
-  <source src="forward_kinematics_arm/generated/showdown.mov" type="video/mp4">
-</video>
+
+https://github.com/M1loseph/learning-kinematics/assets/53463658/5f845bcd-4363-4de6-b555-c3e3a51eb57a
+
 
 ### Reverse kinematics worm
 
