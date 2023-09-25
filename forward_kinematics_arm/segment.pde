@@ -1,70 +1,89 @@
 class Segment {
   private static final float WIDTH = 5; 
   private static final float JOINT_DIAMITER = 9;
-  
+  private static final float SEGMENT_COLOR = 0;
+  private static final float CIRCLE_COLOR = 200;
+
   PVector a;
-  float length;
+  final float length;
   float angle;
   Segment next;
-  
-  Segment(float x, float y, float length, float angle, Segment next) {
+
+  Segment(float x, float y, float length, float angle) {
     this.a = new PVector(x, y);
     this.length = length;
     this.angle = angle;
-    this.next = next;
   }
-  
+
   void rotareTorwards(float tx, float ty) {
     PVector target = new PVector(tx - a.x, ty - a.y);
     float diff = target.heading() - angle;
     angle = target.heading();
-    if(next != null) {
+    if (next != null) {
       next.adjust(calculateB(), diff);
     }
   }
-    
+
   void draw() {
     PVector b = calculateB();
-    
-    stroke(255);
+
+    fill(SEGMENT_COLOR);
+    stroke(SEGMENT_COLOR);
     strokeWeight(WIDTH);
     line(a.x, a.y, b.x, b.y);
-    
+
     circle(a.x, a.y, JOINT_DIAMITER);
     circle(b.x, b.y, JOINT_DIAMITER);
-    
-    if(next != null) {
+
+    if (next != null) {
       next.draw();
     }
   }
-  
-  Segment findClosest(float x, float y) {
-    if(next == null) {
-       return this;
+
+  void drawCircles() {
+    drawCircles(a.x, a.y);
+  }
+
+
+  Segment findEndJoint(float x, float y) {
+    Segment found = next == null ? null : next.findEndJoint(x, y);
+    if (found != null) {
+      return found;
     }
-    
-    Segment otherClosest = next.findClosest(x, y);
+
     PVector thisB = calculateB();
-    PVector otherB = otherClosest.calculateB();
-    
-    float thisDistance = sqrt((thisB.x - x) * (thisB.x - x) + (thisB.y - y) * (thisB.y - y));
-    float otherDistance = sqrt((otherB.x - x) * (otherB.x - x) + (otherB.y - y) * (otherB.y - y));
-    
-    if(thisDistance <= otherDistance) {
-      return this;
-    } 
-    return otherClosest;
+    float distance = sqrt(pow(thisB.x - x, 2) + pow(thisB.y - y, 2));
+
+    if (distance > JOINT_DIAMITER / 2) {
+      return null;
+    }
+
+    return this;
   } 
-  
-  private void adjust(PVector newA, float angleDiff) {
+
+  void adjust(PVector newA, float angleDiff) {
     this.a = newA;
     angle += angleDiff;
-    if(next != null) {
+    if (next != null) {
       next.adjust(calculateB(), angleDiff);
     }
   }
 
-  
+  private void drawCircles(float rootX, float rootY) {
+    PVector b = calculateB();
+    float radius = sqrt(pow(b.x - rootX, 2) + pow(b.y - rootY, 2));
+
+    noFill();
+    stroke(CIRCLE_COLOR);
+    strokeWeight(1);
+    circle(rootX, rootY, radius * 2);
+
+    if (next == null) {
+      return;
+    }
+    next.drawCircles(rootX, rootY);
+  }
+
   private PVector calculateB() {
     float x = a.x + length * cos(angle);
     float y = a.y + length * sin(angle);
