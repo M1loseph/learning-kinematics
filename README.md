@@ -8,4 +8,7 @@ https://github.com/M1loseph/learning-kinematics/assets/53463658/bd749ae8-8fdc-4c
 
 ### Reverse kinematics worm
 
-When you press a mouse button, a virtual worm starts following the mouse coursor. All segments follow one another, creating an illusion of living body. 
+A virtual worm follows the `sin` function from -PI to PI, and then goes back over the `-sin` function. All segments follow one another, creating an illusion of living body. 
+
+https://github.com/M1loseph/learning-kinematics/assets/53463658/b07d1464-3026-4799-9cb2-28a8a8dbc864
+
