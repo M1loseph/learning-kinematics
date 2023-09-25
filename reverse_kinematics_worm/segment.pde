@@ -3,12 +3,14 @@ class Segment {
   float length;
   float angle;
   float width;
+  color segmentColor;
   
-  Segment(float x, float y, float width, float length, float angle) {
+  Segment(float x, float y, float width, float length, float angle, color segmentColor) {
     this.a = new PVector(x, y);
     this.length = length;
     this.angle = angle;
     this.width = width;
+    this.segmentColor = segmentColor;
   }
   
   void follow(float tx, float ty) {
@@ -18,7 +20,7 @@ class Segment {
   
   void draw() {
     strokeWeight(width);
-    stroke(255);
+    stroke(segmentColor);
     PVector b = calculateB();
     line(a.x, a.y, b.x, b.y);
   }
