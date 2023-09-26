@@ -16,3 +16,4 @@ https://github.com/M1loseph/learning-kinematics/assets/53463658/b07d1464-3026-47
 
 Implementation of a simple reverse kinematics with arm that has two degrees of freedom. The end of a manipulator follows the circle and the two joint angles are calculated in order to achive a desired position.
 
+https://github.com/M1loseph/learning-kinematics/assets/53463658/2c631f35-810a-41dd-9739-a84eedf868dc
