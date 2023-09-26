@@ -12,3 +12,7 @@ A virtual worm follows the `sin` function from -PI to PI, and then goes back ove
 
 https://github.com/M1loseph/learning-kinematics/assets/53463658/b07d1464-3026-4799-9cb2-28a8a8dbc864
 
+### Reverse kinematrics 2 DOF arm
+
+Implementation of a simple reverse kinematics with arm that has two degrees of freedom. The end of a manipulator follows the circle and the two joint angles are calculated in order to achive a desired position.
+
