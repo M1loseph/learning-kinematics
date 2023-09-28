@@ -17,3 +17,9 @@ https://github.com/M1loseph/learning-kinematics/assets/53463658/b07d1464-3026-47
 Implementation of a simple reverse kinematics with arm that has two degrees of freedom. The end of a manipulator follows the circle and the two joint angles are calculated in order to achive a desired position.
 
 https://github.com/M1loseph/learning-kinematics/assets/53463658/2c631f35-810a-41dd-9739-a84eedf868dc
+
+### Reverse kinematics 2 DOF arm in 3D
+
+Imeplementation of an arm with 2DOF in the vertical axis and one deggee of feedom in the horizontal one. The end of a manipulator follows a rectangle border.
+
+https://github.com/M1loseph/learning-kinematics/assets/53463658/c8fa5bdb-dd1d-444f-aded-f1bb67281585
