@@ -32,7 +32,7 @@ void draw() {
   iter.draw();
   net.draw();
   arm.draw();
-  
+
   saveFrame("images/####.tif");
 }
 
