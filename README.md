@@ -23,3 +23,9 @@ https://github.com/M1loseph/learning-kinematics/assets/53463658/2c631f35-810a-41
 Imeplementation of an arm with 2DOF in the vertical axis and one deggee of feedom in the horizontal one. The end of a manipulator follows a rectangle border.
 
 https://github.com/M1loseph/learning-kinematics/assets/53463658/c8fa5bdb-dd1d-444f-aded-f1bb67281585
+
+### Reverse kinematics 3 DOF in 2D
+
+This time around the arm follows the mouse cursor. You can manipulate the end effector angle using a mouse wheel. This demonstration (unlike other github uploads) is simply a gif.
+
+![](reverse_kinematics_fixed_position_arm_3DOF/generated/demonstration.gif)
