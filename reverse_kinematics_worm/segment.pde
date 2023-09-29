@@ -33,12 +33,12 @@ class Segment {
   }
   
   void changeAngle(float tx, float ty) {
-    PVector pointing = new PVector(tx - a.x, ty - a.y);
+    var pointing = new PVector(tx - a.x, ty - a.y);
     angle = pointing.heading();
   }
   
   void step(float tx, float ty) {
-    PVector b = calculateB();
+    var b = calculateB();
     a.add(tx - b.x, ty - b.y);
   }
 }

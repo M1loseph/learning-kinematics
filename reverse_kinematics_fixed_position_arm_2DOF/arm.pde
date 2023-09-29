@@ -25,7 +25,7 @@ class Arm {
 
   private void drawResultant() {
     pushMatrix();  
-    PVector end = second.calculateB();
+    var end = second.calculateB();
     rotate(atan2(end.y, end.x));
     stroke(200);
     strokeWeight(3);
@@ -37,8 +37,8 @@ class Arm {
   }
 
   private void drawAngles() {
-    PVector end = second.calculateB();    
-    PVector elbow = second.a;
+    var end = second.calculateB();    
+    var elbow = second.a;
 
     noFill();
     stroke(200);
@@ -49,7 +49,7 @@ class Arm {
   }
 
   private void drawLetters() {
-    PVector end = second.calculateB();    
+    var end = second.calculateB();    
     textSize(20);
 
     pushMatrix();

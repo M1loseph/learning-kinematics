@@ -56,6 +56,7 @@ class RectangleVerteciesIterator {
       x -= delta;
       break;
     }
+
     return new PVector(x, y, z);
   }
 }

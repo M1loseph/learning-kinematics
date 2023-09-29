@@ -13,10 +13,9 @@ int iteration = 0;
 final int MAX_ITERATIONS = 500;
 
 void draw() {
-  clear();
   background(255);
  
-  PVector next = circleStepper.next();
+  var next = circleStepper.next();
   arm.moveTo(next.x, next.y);
  
   net.draw();

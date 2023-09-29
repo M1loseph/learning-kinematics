@@ -22,10 +22,9 @@ void draw() {
   rotateY(yc);
   scale(zc);
 
-  clear();
   background(255);
 
-  PVector nextPosition = iter.next();
+  var nextPosition = iter.next();
 
   arm.moveTo(nextPosition.x, nextPosition.y, nextPosition.z);
 

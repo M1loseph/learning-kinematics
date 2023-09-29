@@ -5,7 +5,7 @@ class Worm {
     colorMode(HSB, segmentsCount);
     for(int i = 0; i < segmentsCount; i++) {
       float width = maxWidth - (maxWidth - minWidth) * i / segmentsCount;
-      Segment s = new Segment(x, y, width, length, i, color(i, 100, 100));
+      var s = new Segment(x, y, width, length, i, color(i, 100, 100));
       segments.add(s);
       x += length;
     }

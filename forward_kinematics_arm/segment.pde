@@ -16,7 +16,7 @@ class Segment {
   }
 
   void rotareTorwards(float tx, float ty) {
-    PVector target = new PVector(tx - a.x, ty - a.y);
+    var target = new PVector(tx - a.x, ty - a.y);
     float diff = target.heading() - angle;
     angle = target.heading();
     if (next != null) {
@@ -25,7 +25,7 @@ class Segment {
   }
 
   void draw() {
-    PVector b = calculateB();
+    var b = calculateB();
 
     fill(SEGMENT_COLOR);
     stroke(SEGMENT_COLOR);
@@ -46,12 +46,12 @@ class Segment {
 
 
   Segment findEndJoint(float x, float y) {
-    Segment found = next == null ? null : next.findEndJoint(x, y);
+    var found = next == null ? null : next.findEndJoint(x, y);
     if (found != null) {
       return found;
     }
 
-    PVector thisB = calculateB();
+    var thisB = calculateB();
     float distance = sqrt(pow(thisB.x - x, 2) + pow(thisB.y - y, 2));
 
     if (distance > JOINT_DIAMITER / 2) {
@@ -70,7 +70,7 @@ class Segment {
   }
 
   private void drawCircles(float rootX, float rootY) {
-    PVector b = calculateB();
+    var b = calculateB();
     float radius = sqrt(pow(b.x - rootX, 2) + pow(b.y - rootY, 2));
 
     noFill();
